@@ -28,11 +28,8 @@ This repo serves as a custom styled Keycloak FTL-based theme for FREVA.
 
 1. **Modify FTL templates** in the `login` directory:
    - `login.ftl` - Login page
-   - `register.ftl` - Registration page
-   - `login-reset-credentials.ftl` - Password reset
 
 2. **Customize styles** in `login/resources/css/styles.css`
 
 3. **Test your changes** by running the preview script
 
-4. **Commit and push** to trigger the GitHub workflow
