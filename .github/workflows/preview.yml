@@ -24,7 +24,7 @@ jobs:
         run: mkdir -p preview-build
 
       - name: Run FTL renderer script
-        run: node scripts/render-ftl.js
+        run: node scripts/render_ftl.js
 
       - name: Verify HTML generation
         run: |
