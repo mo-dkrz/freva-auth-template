@@ -1,0 +1,35 @@
+name: Freva Auth Theme
+
+on:
+  push:
+  pull_request:
+    branches:
+        - main
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Create preview directory
+        run: mkdir -p preview-build
+
+      - name: Run FTL renderer script
+        run: node scripts/render-ftl.js
+
+      - name: Verify HTML generation
+        run: |
+          if [ ! -f "preview-build/index.html" ]; then
+            echo "Error: HTML preview not generated correctly"
+            exit 1
+          fi
+          echo "Theme templates successfully rendered to HTML for preview."
