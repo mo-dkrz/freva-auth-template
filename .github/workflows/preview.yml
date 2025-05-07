@@ -1,4 +1,5 @@
 name: Freva Auth Theme
+
 on:
   push:
   pull_request:
